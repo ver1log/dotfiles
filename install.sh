@@ -12,7 +12,10 @@ GIT_CMD="/usr/bin/git --git-dir=$DOTFILES_DIR/ --work-tree=$HOME"
 ## 3. Backup any conflicting files
 echo "Backing up pre-existing dot files..."
 mkdir -p $HOME/.dotfiles-backup
-$GIT_CMD checkout 2>&1 | grep -E "\s+\." | awk '{print $1}' | while read -r file; do
+$GIT_CMD checkout 2>&1 \
+| grep -E "^\s+[^:]+$" \
+| sed 's/^[[:space:]]*//' \
+| while read -r file; do
   if [ -e "$HOME/$file" ]; then
     mkdir -p "$(dirname "$HOME/.dotfiles-backup/$file")"
     mv "$HOME/$file" "$HOME/.dotfiles-backup/$file"
