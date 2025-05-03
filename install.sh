@@ -7,7 +7,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 git clone --bare "$REPO_URL" "$DOTFILES_DIR"
 #
 ## 2. Define the specific git command for easy use
-GIT_CMD='/usr/bin/git --git-dir=$DOTFILES_DIR/ --work-tree=$HOME'
+GIT_CMD="/usr/bin/git --git-dir=$DOTFILES_DIR/ --work-tree=$HOME"
 #
 ## 3. Backup any conflicting files
 echo "Backing up pre-existing dot files..."
