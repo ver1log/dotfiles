@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Set repo URL and Git dir/work tree
 REPO_URL="https://github.com/ver1log/dotfiles.git"
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$HOME/dotfiles"
 #
 ## 1. Clone bare repo to a safe place
 git clone --bare "$REPO_URL" "$DOTFILES_DIR"
