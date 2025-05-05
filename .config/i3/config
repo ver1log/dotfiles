@@ -43,6 +43,9 @@ exec --no-startup-id nm-applet
 #Command to run picom on startup, this allows for the blur and transparency
 exec --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf 
 
+#Command to restore whatever wallpaper i had was active on nitrogen. Restore what may have been overwritten
+exec --no-startup-id nitrogen --restore
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 #these are the default volume controls
